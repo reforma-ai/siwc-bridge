@@ -1,0 +1,47 @@
+{
+    "name": "@reforma/siwc-bridge",
+    "version": "0.0.1",
+    "description": "Bridge Sign in with ChatGPT loopback callbacks to remote backends, Docker environments, and VMs",
+    "type": "module",
+    "license": "MIT",
+    "author": "Reforma, Inc. <dev@reforma.ai>",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/reforma-ai/siwc-bridge.git"
+    },
+    "bin": {
+        "siwc-bridge": "./dist/cli.js"
+    },
+    "files": [
+        "CHANGELOG.md",
+        "dist",
+        "README.md"
+    ],
+    "engines": {
+        "node": ">=24"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "build": "tsc -p tsconfig.build.json",
+        "changeset": "changeset",
+        "clean": "rm -rf node_modules/{*,.*} .turbo dist 2>/dev/null || true",
+        "dev": "bun src/cli.ts",
+        "lint": "eslint .",
+        "release": "changeset publish",
+        "test": "vitest run",
+        "typecheck": "tsc --noEmit",
+        "prepare": "bun run build",
+        "version-packages": "changeset version && bun install --lockfile-only"
+    },
+    "devDependencies": {
+        "@changesets/cli": "^3.0.3",
+        "@reforma/eslint-config": "^1.0.1",
+        "@types/node": "^24",
+        "eslint": "^9.39.1",
+        "typescript": "^7",
+        "vitest": "^5.0.1"
+    },
+    "packageManager": "bun@1.4.0"
+}
