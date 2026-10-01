@@ -1,6 +1,6 @@
 {
     "name": "@reforma/siwc-bridge",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "Bridge Sign in with ChatGPT loopback callbacks to remote backends, Docker environments, and VMs",
     "type": "module",
     "license": "MIT",
